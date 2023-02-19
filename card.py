@@ -1,6 +1,11 @@
 # @Author Jake Busse
+"""
+This file 'card.py' is used to create randomized BINGO cards, display them in the console in a 'human-friendly'
+way, daub numbers once they are called (see 'game.py'), and check cards for wins.
+"""
 
 import random
+
 
 def create_card():
     """
@@ -22,9 +27,11 @@ def create_card():
     card[2][2] = -1
     return card
 
+
 def display_card(card):
     """
-    prints card to console
+    Prints card to console
+    :param card:
     """
     print('B  I  N  G  O')
     for i in range(5):
@@ -36,16 +43,72 @@ def display_card(card):
         print()
     print('---------')
 
+
 def daub_number(card, num):
-    for letter in card:
-        if num in letter:
-            letter[letter.index(num)] = -1
+    """
+    Takes card and number to daub, searches card for number and changes it to '-1' if it is present to signify a
+    daubed number.
+    :param card:
+    :param num:
+    """
+    letter = None
+    index = None
+    if num <= 15 and num in card[0]:
+        letter = 0
+        index = card[0].index(num)
+    elif num <= 30 and num in card[1]:
+        letter = 1
+        index = card[1].index(num)
+    elif num <= 45 and num in card[2]:
+        letter = 2
+        index = card[2].index(num)
+    elif num <= 60 and num in card[3]:
+        letter = 3
+        index = card[3].index(num)
+    elif num <= 75 and num in card[4]:
+        letter = 4
+        index = card[4].index(num)
+    if letter and index:
+        card[letter][index] = -1
+
 
 def check_card(card, pattern):
-    
+    """
+    Takes card and list signifying a pattern of a valid BINGO. This function finds the indexes of daubed numbers on
+    the valid bingo and searches each 'winning' spot on the player card. If the player card matches the winning card,
+    True is returned. If the winning card does not match, False is returned.
+    :param card:
+    :param pattern:
+    :return:
+    """
+    pattern_indexes = [[], [], [], [], []]
+    pattern_count = 0
+    for letter in range(len(pattern)):
+        for pos in range(len(pattern[letter])):
+            if pattern[letter][pos] == -1:
+                pattern_indexes[letter].append(pos)
+                pattern_count += 1
+    card_count = 0
+    for letter in range(len(pattern_indexes)):
+        for pos in range(len(pattern_indexes[letter])):
+            if card[letter][pattern_indexes[letter][pos]] == -1:
+                card_count += 1
+    if pattern_count == card_count:
+        return True
+    else:
+        return False
 
-card = create_card()
-display_card(card)
-for i in range(75):
-    daub_number(card, i)
-display_card(card)
+
+def check_multiple_patterns(card, patterns):
+    """
+    Takes in card and a list of patterns and uses check_card to check each pattern and returns True if at least ONE
+    of the patterns is met, otherwise returns False
+    :param card:
+    :param patterns:
+    :return:
+    """
+    for pattern in patterns:
+        result = check_card(card, pattern)
+        if result:
+            return True
+    return False
