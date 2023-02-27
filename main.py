@@ -14,4 +14,4 @@ for i in range(1, 101):
     print(average_nums_called(i, regular, 1000))
 """
 
-print(average_nums_called(1, regular_four_corners, 100))
+# print(average_nums_called(1, regular_four_corners, 100))
