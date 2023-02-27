@@ -5,19 +5,16 @@ displaying calls, UI plays, and declaring a winner.
 """
 from card import *
 
-calls = []  # Outside of call_number function as it is recursive and these values need to stay constant throughout the game.
-
-
-def call_number():
+# calls = []  # Outside of call_number function as it is recursive and these values need to stay constant throughout the game.
+def call_number(calls):
     """
     Chooses a random number from 1 to 75 and returns it if it has not already been called
     """
-    call = random.randint(1, 76)
-    if call in calls:
-        return call_number()
-    else:
-        calls.append(call)
-        return call
+    call = random.randint(0, 76)
+    while call in calls:
+        call = random.randint(0, 76)
+    calls.append(call)
+    return calls
 
 
 def display_call(call):
@@ -51,12 +48,7 @@ def fast_play(cards, pattern):
         call = call_number()
         for card in cards:
             daub_number(card, call)
-            ways = None
-            if isinstance(pattern[0][0], tuple):
-                ways = check_multiple_patterns(card, pattern)
-            else:
-                ways = check_card(card, pattern)
-            if ways:
+            if check_card(card, pattern):
                 win = True
                 winners.append(cards.index(card))
     return winners
@@ -81,12 +73,7 @@ def slow_play(cards, pattern):
         for card in cards:
             daub_number(card, call)
             display_card(card)
-            ways = None
-            if isinstance(pattern[0][0], tuple):
-                ways = check_multiple_patterns(card, pattern)
-            else:
-                ways = check_card(card, pattern)
-            if ways:
+            if check_card(card, pattern):
                 win = True
                 game_info = {'nums_called': nums_called, 'winning_card': card}
     return game_info

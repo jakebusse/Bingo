@@ -51,28 +51,13 @@ def daub_number(card, num):
     :param card:
     :param num:
     """
-    letter = None
-    index = None
-    if num <= 15 and num in card[0]:
-        letter = 0
-        index = card[0].index(num)
-    elif num <= 30 and num in card[1]:
-        letter = 1
-        index = card[1].index(num)
-    elif num <= 45 and num in card[2]:
-        letter = 2
-        index = card[2].index(num)
-    elif num <= 60 and num in card[3]:
-        letter = 3
-        index = card[3].index(num)
-    elif num <= 75 and num in card[4]:
-        letter = 4
-        index = card[4].index(num)
-    if letter and index:
-        card[letter][index] = -1
+    for letter in range(len(card)):
+        if num in card[letter]:
+            index = card[letter].index(num)
+            card[letter][index] = -1
 
 
-def check_card(card, pattern):
+def check_against_pattern(card, pattern):
     """
     Takes card and list signifying a pattern of a valid BINGO. This function finds the indexes of daubed numbers on
     the valid bingo and searches each 'winning' spot on the player card. If the player card matches the winning card,
@@ -99,16 +84,21 @@ def check_card(card, pattern):
         return False
 
 
-def check_multiple_patterns(card, patterns):
+def check_card(card, patterns):
     """
-    Takes in card and a list of patterns and uses check_card to check each pattern and returns True if at least ONE
-    of the patterns is met, otherwise returns False
+    Takes card and list signifying a pattern of a valid BINGO. This function finds the indexes of daubed numbers on
+    the valid bingo and searches each 'winning' spot on the player card. If the player card matches the winning card,
+    True is returned. If the winning card does not match, False is returned. This will work for single or complex
+    patterns.
     :param card:
     :param patterns:
     :return:
     """
-    for pattern in patterns:
-        result = check_card(card, pattern)
-        if result:
-            return True
-    return False
+    if isinstance(patterns[0][0], tuple):
+        for pattern in patterns:
+            result = check_against_pattern(card, pattern)
+            if result:
+                return True
+        return False
+    else:
+        return check_against_pattern(card, patterns)
