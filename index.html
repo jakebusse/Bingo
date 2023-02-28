@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  	<title>Bingo Labs</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+		
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="css/bingo.css">
+		<link rel="shortcut icon" href="images/favicon.ico">
+  </head>
+  <body>
+		
+		<div class="wrapper d-flex align-items-stretch">
+			<nav id="sidebar">
+				<div class="custom-menu">
+					<button type="button" id="sidebarCollapse" class="btn btn-primary">
+	          <i class="fa fa-bars"></i>
+	          <span class="sr-only">Toggle Menu</span>
+	        </button>
+        </div>
+				<div class="p-4 pt-5">
+		  		<h1><a href="index.html" class="logo">Bingo Labs</a></h1>
+	        <ul class="list-unstyled components mb-5">
+			  <li class="active">
+				<a href="index.html">Home</a>
+			  </li>
+	          <li>
+	              <a href="about.html">About</a>
+	          </li>
+	          <li>
+              <a href="#dataSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Data</a>
+              <ul class="collapse list-unstyled" id="dataSubmenu">
+                <li>
+                    <a href="data/calls.html" >Average Calls</a>
+                </li>
+              </ul>
+	          </li>
+	          <li>
+              <a href="patterns.html">Patterns</a>
+	          </li>
+	          <li>
+              <a href="https://github.com/jakebusse/Bingo" target="_blank">Github <i class="fa fa-external-link"></i></a>
+	          </li>
+	        </ul>
+
+	        <div class="footer">
+	        	<p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+						  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | Jake Busse
+						  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+	        </div>
+
+	      </div>
+    	</nav>
+
+        <!-- Page Content  -->
+      <div id="content" class="p-4 p-md-5 pt-5">
+
+        <h2 class="mb-4">Welcome to Bingo Labs</h2>
+		<div class="alert alert-warning" role="alert" style="width:fit-content">
+			<i class="fa fa-warning"></i>&ensp;This site is still very much a work in progress and will be updated regularly as more data becomes available.
+		</div>
+        <p>Please feel free to visit the "About" page to find out more information regarding this project.</p>
+		<hr>
+		<div class="featured-data">
+			<h3>Featured Data</h3>
+			<p>Shown here is the data from my most recently run simulation calculating the <b>average number of calls required to bingo for games with 1 to 500 cards in play over a series of 1000 iterations</b>. I am working on simulating all major Bingo patterns for this type of analysis and will update this site as they are completed. As more patterns are completed, the featured data will show a combined graph comparing the distribution of values of each game type. Individual graphs can be found on the <a href="data/calls.html">Average Calls</a> analysis page under  <i>Data > Average Calls</i>. To view the patterns currently scheduled to be analyzed, or to suggest a new pattern, please visit the <a href="patterns.html">Patterns</a> page</p>
+		</div>
+
+      </div>
+		</div>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
