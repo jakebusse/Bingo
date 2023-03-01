@@ -1,14 +1,13 @@
 # @Author Jake Busse
-"""
-This file 'game.py' contains most of the basic BINGO game functions outside the card, such as calling numbers,
-displaying calls, UI plays, and declaring a winner.
-"""
+#  This file 'game.py' contains most of the basic BINGO game functions outside the card, such as calling numbers,
+#  displaying calls, UI plays, and declaring a winner.
+
 from card import *
 
-# calls = []  # Outside of call_number function as it is recursive and these values need to stay constant throughout the game.
+
 def call_number(calls):
     """
-    Chooses a random number from 1 to 75 and returns it if it has not already been called
+    Takes a list calls and appends random number from 1 to 75 that is not already in the list
     """
     call = random.randint(0, 76)
     while call in calls:

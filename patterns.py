@@ -1,3 +1,4 @@
+#  @Author: Jake Busse
 """
 This file 'patterns.py' contains basic BINGO game patterns to be checked against a players card for a win.
 -----

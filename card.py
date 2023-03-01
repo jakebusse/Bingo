@@ -1,15 +1,13 @@
 # @Author Jake Busse
-"""
-This file 'card.py' is used to create randomized BINGO cards, display them in the console in a 'human-friendly'
-way, daub numbers once they are called (see 'game.py'), and check cards for wins.
-"""
+#  This file 'card.py' is used to create randomized BINGO cards, display them in the console in a 'human-friendly'
+#  way, daub numbers once they are called (see 'game.py'), and check cards for wins.
 
 import random
 
 
 def create_card():
     """
-    Returns a list of 5 lists, each list will contain 5 random numbers associated with the letter.
+    Returns a list of 5 lists, each list will contain 5 random (unique) integers associated with the letter.
     """
     b = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
     i = [16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30]

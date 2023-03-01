@@ -1,8 +1,6 @@
-"""
-This file 'simulate.py' simulates different variations of BINGO games and returns data used for statistical analysis
-(see individual functions)
-"""
-
+# @Author: Jake Busse
+#  This file 'simulate.py' simulates different variations of BINGO games and returns data used for statistical analysis
+#  (see individual functions)
 from card import *
 from game import *
 from patterns import *
@@ -10,7 +8,8 @@ from patterns import *
 
 def average_nums_called(num_cards, pattern, iterations):
     """
-
+    This function calculates the average number of balls called before a valid bingo occurs over a provided number of
+    iterations, for a specified number of cards, and for a specified pattern.
     :param cards:
     :param pattern:
     :param iterations:
