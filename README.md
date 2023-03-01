@@ -22,4 +22,4 @@ The source code for this project is currently made up of 6 python files
 This code is open source and free to use and modify. Please tag @jakebusse if replicated elsewhere.
 
 ### Statistical Analysis Project
-I am using this program to run a series of statistical analyses on Bingo games that can be found [here](https://www.jakebusse.github.io/Bingo).
+I am using this program to run a series of statistical analyses on Bingo games that can be found [here](https://jakebusse.github.io/Bingo).
