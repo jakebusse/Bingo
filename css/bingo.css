@@ -27,3 +27,11 @@ body {
         width: 50vw;
     }
 }
+
+.credit-link {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.credit-link:hover {
+    color: rgba(255, 255, 255, 1);
+}

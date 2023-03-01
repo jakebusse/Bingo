@@ -8312,12 +8312,8 @@ a[data-toggle="collapse"] {
     background: #866ec7 !important;
     border-color: #866ec7 !important; }
 
-.footer p, a {
+.footer p {
   color: rgba(255, 255, 255, 0.5); }
-
-.footer a:hover {
-  color: rgba(255, 255, 255, 1);
-}
 
 .form-control {
   height: 40px !important;
