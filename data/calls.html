@@ -59,17 +59,33 @@
         <!-- Page Content  -->
       <div id="content" class="p-4 p-md-5 pt-5">
 
-        <h2 class="mb-4">Welcome to Bingo Labs</h2>
-		<div class="alert alert-warning" role="alert" style="width:fit-content">
-			<i class="fa fa-warning"></i>&ensp;This site is still very much a work in progress and will be updated regularly as more data becomes available.
+        <h2 class="mb-4">Average Calls by Game</h2>
+		<div class="content">
+			<h4>Abstract</h4>
+			<p>This particular analysis shows data for a series of common BINGO game patterns. Average calls are calculated by taking the average number of balls called before a valid Bingo is reached (according to the specified pattern) over 1000 iterations with a specified number of cards in play.</p>
+			<p>As you can see, it is observed that the number of cards in play significantly impacts the average number of calls required for a valid Bingo to occur. For the sake of this experiment all simulations are testing 1-500 cards over 1000 iterations.</p>
+			<hr>
+			<h4>Facts and Figures</h4>
+			<p>With each simulation using 500 cards over 1000 iterations for each value of cards 1-500:</p>
+			<ul>
+				<li>500,000 Games of Bingo are played</li>
+				<li>124,999,500 Bingo Cards are Created and Evaluated</li>
+			</ul>
+			<p>Thus far, <b>2</b> simulations have been run, resulting in:</p>
+			<ul>
+				<li>1,000,000 Games of Bingo being played</li>
+				<li>249,999,000 Bingo Cards being Created and Evaluated</li>
+			</ul>
+			<hr>
+			<h4>Goals</h4>
+			<p>For this analysis, my goal is to run analyses on many more patterns and make this page more accessible with imported CSV data that can be queried and an interactive estimator using the calculated logarithmic trend.</p>
+			<p>For the project overal, my goal is to create more types of simulations to further analyze the game of BINGO as a whole.</p>
+			<hr>
+			<h4>Data</h4>
+			<div class='tableauPlaceholder' id='viz1677632108190' style='position: relative'><noscript><a href='#'><img alt='Average Calls by Game ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Bi&#47;BingoLabs&#47;Graph&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='BingoLabs&#47;Graph' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Bi&#47;BingoLabs&#47;Graph&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-US' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1677632108190');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+			<br>
+			<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSvGlNgt7VBNhLDmtWF7VkirMu1xhrGTCWN7djiclmNFeWcvvUjoB2GsaBDfHD4i6EknzCZiyGmy1I0/pubhtml?gid=67892520&amp;single=true&amp;widget=true&amp;headers=false" height="1000px" width="500px" style="border:none;"></iframe>
 		</div>
-        <p>Please feel free to visit the "About" page to find out more information regarding this project.</p>
-		<hr>
-		<div class="featured-data">
-			<h3>Featured Data</h3>
-			<p>Shown here is the data from my most recently run simulation calculating the <b>average number of calls required to bingo for games with 1 to 500 cards in play over a series of 1000 iterations</b>. I am working on simulating all major Bingo patterns for this type of analysis and will update this site as they are completed. As more patterns are completed, the featured data will show a combined graph comparing the distribution of values of each game type. Individual graphs can be found on the <a href="data/calls.html">Average Calls</a> analysis page under  <i>Data > Average Calls</i>. To view the patterns currently scheduled to be analyzed, or to suggest a new pattern, please visit the <a href="patterns.html">Patterns</a> page</p>
-		</div>
-
       </div>
 		</div>
 
