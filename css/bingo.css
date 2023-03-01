@@ -1,7 +1,29 @@
-.featured-data {
+body {
+    cursor: default;
+}
+
+.sub-section {
     margin-left: 50px;
 }
 
-.featured-data h3 {
+.sub-section h2, h3 {
     margin-left: -20px;
+}
+
+.content {
+    margin-left: 30px;
+}
+
+.patterns td {
+    vertical-align: top;
+}
+
+.patterns th {
+    width: 25vw;
+}
+
+@media (max-width: 1000px) {
+    .patterns th {
+        width: 50vw;
+    }
 }
